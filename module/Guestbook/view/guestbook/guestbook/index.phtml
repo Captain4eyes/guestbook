@@ -1,0 +1,33 @@
+<br>
+<a class="btn btn-default" href="<?= $this->url('guestbook', ['action'=>'add']); ?>">Добавить запись</a>
+<br><br>
+
+<?php if (!empty($entries)): ?>
+
+    <?php foreach($entries as $entry): ?>
+
+        <div class="entry">
+            <div class="entry__body">
+                <p class="entry__wrap">
+                    <b>Запись добавил(а):</b> <?= $this->escapeHtml($entry->getName()) ?> <br>
+                    <b>Дата: </b><i><?= $this->escapeHtml($entry->getDatePublish()->format('d-m-Y, H:i')); ?></i>
+                </p>
+                <p class="entry__text">
+                    <?= $this->escapeHtml($entry->getText()); ?>
+                </p>
+
+                <?php $file = $entry->getUploadedFile(); ?>
+
+                <?php if(!empty($file)): ?>
+<!--                    --><?//= $this->gbManager->saveEntryThumbImage($file); ?>
+                    <img src="<?= $this->gbManager->getEntryFileSrc($file); ?>" alt="Файл">
+                <?php endif; ?>
+                <hr>
+            </div>
+        </div>
+
+    <?php endforeach; ?>
+
+<?php else: ?>
+    <h3>В гостевой книге пока нет записей!</h3>
+<?php endif; ?>

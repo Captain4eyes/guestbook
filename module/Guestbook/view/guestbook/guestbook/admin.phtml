@@ -1,0 +1,54 @@
+<h1>Панель администратора</h1>
+
+<p>
+    <a class="btn btn-default" href="
+    <?= $this->url('guestbook', ['action'=>'add']); ?>">
+        Добавить запись
+    </a>
+</p>
+
+<table class="table table-striped">
+
+    <tr>
+        <th>ID</th>
+        <th>Имя</th>
+        <th>Email</th>
+        <th>Текст</th>
+        <th>Файл</th>
+        <th>Дата публикации</th>
+        <th>Статус</th>
+        <th>Операции</th>
+    </tr>
+
+<?php if (!empty($entries)): ?>
+
+    <?php foreach ($entries as $entry): ?>
+
+        <tr>
+            <td><?= $this->escapeHtml($entry->getId()); ?></td>
+            <td><?= $this->escapeHtml($entry->getName()); ?></td>
+            <td><?= $this->escapeHtml($entry->getEmail()); ?></td>
+            <td><?= $this->escapeHtml(substr($entry->getText(), 0, 100)); ?>...</td>
+            <td><?= $this->escapeHtml($entry->getUploadedFile()); ?></td>
+            <td><?= $this->escapeHtml($entry->getDatePublish()->format('d-m-Y:H:i')); ?></td>
+            <td><?= $this->escapeHtml($gbManager->getEntryStatusAsString($entry)); ?></td>
+            <td>
+                <a class="btn btn-info" href="<?= $this->url('guestbook',
+                    ['action'=>'edit', 'id'=>$entry->getId()]); ?>">
+                    <span class="glyphicon glyphicon-pencil" ></span>
+                </a>
+                <a class="btn btn-danger" href="<?= $this->url('guestbook',
+                    ['action'=>'delete', 'id'=>$entry->getId()]); ?>">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </a>
+            </td>
+        </tr>
+
+    <?php endforeach; ?>
+
+</table>
+
+<?php else: ?>
+    <h3>В гостевой книге пока нет записей!</h3>
+<?php endif; ?>
+
