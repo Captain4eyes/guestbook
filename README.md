@@ -1,17 +1,17 @@
 # Guestbook
 
-## Installation using Composer
-### Install dependencies:
+### 1. Install dependencies:
 ```bash
 $ composer install
 ```
-### Configure database connection:
-Change params for database connection in: `\guestbook\module\Guestbook\config\module.config.php`
+### 2. Create directories `data/uploads` and `data/uploads/thumbs` for future uploaded images.
 
-### Use migration commands below to create table from Guestbook Entry entity:
+### 3. Configure database connection in: `module\Guestbook\config\module.config.php`
+
+### 4. Use migration commands below to create table from Guestbook Entry entity:
 #### 
 The first command calculates the difference between your database and the migration, the second command performs the migration.
-### Linux:
+#### Linux:
 ```bash
 $ php vendor/doctrine/doctrine-module/bin/doctrine-module.php migrations:diff
 ```
@@ -19,7 +19,7 @@ $ php vendor/doctrine/doctrine-module/bin/doctrine-module.php migrations:diff
 $ php vendor/doctrine/doctrine-module/bin/doctrine-module.php migrations:migrate
 ```
 
-### Windows:
+#### Windows:
 ```bash
 $ php vendor\doctrine\doctrine-module\bin\doctrine-module.php migrations:diff
 ```
@@ -27,4 +27,4 @@ $ php vendor\doctrine\doctrine-module\bin\doctrine-module.php migrations:diff
 $ php vendor\doctrine\doctrine-module\bin\doctrine-module.php migrations:migrate
 ```
 
-## Test application in browser.
+## 5. Test application in browser.
