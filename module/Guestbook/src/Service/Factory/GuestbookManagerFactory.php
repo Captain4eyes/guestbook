@@ -19,6 +19,12 @@ use Guestbook\Service\GuestbookManager;
  */
 class GuestbookManagerFactory implements FactoryInterface
 {
+    /**
+     * @param ContainerInterface $container
+     * @param $requestedName
+     * @param array|null $options
+     * @return GuestbookManager|object
+     */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         $entityManager = $container->get('doctrine.entitymanager.orm_default');

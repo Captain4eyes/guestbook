@@ -12,7 +12,7 @@ use Guestbook\Entity\Entry;
 use WideImage\WideImage as WideImage;
 
 /**
- * Class GuestbookManager
+ * Class GuestbookManager.
  * @package Guestbook\Service
  */
 class GuestbookManager
@@ -79,7 +79,7 @@ class GuestbookManager
     }
 
     /**
-     * Remove entry
+     * Remove entry.
      * @param $entry
      * @throws \Doctrine\ORM\OptimisticLockException
      */
@@ -91,6 +91,7 @@ class GuestbookManager
     }
 
     /**
+     * Get status string.
      * @param $entry
      * @return string
      */
@@ -105,7 +106,7 @@ class GuestbookManager
     }
 
     /**
-     * Getting entry scr by name.
+     * Get entry scr by name.
      * @param $uploadedFile
      * @return bool|string
      */

@@ -12,10 +12,16 @@ use Guestbook\Entity\Entry;
 use Zend\Form\Form;
 use Zend\InputFilter\InputFilter;
 
+/**
+ * Class GuestbookEditForm
+ * @package Guestbook\Form
+ */
 class GuestbookEditForm extends Form
 {
-    public $submitName;
 
+    /**
+     * GuestbookEditForm constructor.
+     */
     public function __construct()
     {
         parent::__construct('entry-edit-form');
@@ -26,6 +32,9 @@ class GuestbookEditForm extends Form
         $this->addInputFilter();
     }
 
+    /**
+     * Add for elements.
+     */
     protected function addElements()
     {
         $this->add([
@@ -97,6 +106,9 @@ class GuestbookEditForm extends Form
         ]);
     }
 
+    /**
+     * Add form filters.
+     */
     private function addInputFilter()
     {
         $inputFilter = new InputFilter();

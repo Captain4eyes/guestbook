@@ -15,7 +15,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Entry
 {
-    // Константы статуса поста.
+    // Константы статуса записи.
     const STATUS_DRAFT       = 1; // Черновик.
     const STATUS_PUBLISHED   = 2; // Опубликованная запись.
 

@@ -16,8 +16,14 @@ use Zend\ModuleManager\Feature\ConfigProviderInterface;
  */
 class Module implements ConfigProviderInterface
 {
+    /**
+     * Module version.
+     */
     const VERSION = '0.1-dev';
 
+    /**
+     * @return array|mixed|\Traversable
+     */
     public function getConfig()
     {
         return include __DIR__ . '/../config/module.config.php';
