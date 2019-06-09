@@ -6,7 +6,7 @@ $ composer install
 ```
 ### 2. Create directories `data/uploads` and `data/uploads/thumbs` for future uploaded images.
 
-### 3. Configure database connection in: `module\Guestbook\config\module.config.php`
+### 3. Configure database connection in: `module/Guestbook/config/module.config.php`
 
 ### 4. Use migration commands below to create table from Guestbook Entry entity:
 #### 
